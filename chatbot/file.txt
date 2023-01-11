@@ -1,0 +1,37 @@
+So below mentioned are the questions and answers you would expect the bot to give you
+like if you say 'how are you doing' it will return 'i'm doing great'
+so you can select what to say like you can directly start off with 'what do you sell' it will reply 'we sell exciting toys' 
+the question you pick the answer it will give you will be after the question
+                
+                
+                "Hey",
+                "Hi there!",
+                "Hi",
+                "Hi!",
+                "How are you doing?",
+                "I'm doing great.",
+                "That is good to hear",
+                "Thank you.",
+                "You're welcome.",
+                "what do you sell? ", "We sell exciting toys",
+                "Can you recommend me any toy?",
+                "Sure, first told me that if you have a daughter or son?",
+                "son", "you can have a car toy, boys love playing with cars"
+                "daughter", "you can have a doll toy, girls love playing with dolls",
+                "Thank you.",
+                "You're welcome.",
+                "can you tell the price of a car toy?", "Sure sir/maam it's 10 Pound"
+                "Thank you.",
+                "You're welcome.",
+                "can you tell the price of a doll toy?", "Sure sir/maam it's 12 Pound",
+                "Thank you.",
+                "You're welcome.",
+                "from where i can buy it?", "There is a dropdown 'Toy Stores' on navigation bar you can check from there"
+                "Sure i will,Thank you.",
+                "You're welcome.",
+                "What is your name?", "My name is toy ChatBot",
+                "Who created you?", "Amina",
+                "Tell me about yourself",
+                "My name is Amina malik. I am a Computer engineer",
+                "Contact",
+                "Email : amina1000hashi@hotmail.com, Location : United Kingdom",

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Toy Stores
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="https://www.onetoystore.com/">One Toy Store</a>
+              <a class="dropdown-item" href="https://www.toystreet.co.uk/">Toy Street</a>
+            </div>
+          </li>
+          
+        </ul>
+      
+      </div>
+    </nav>
+    <!-- headings -->
+    <h1 style="font-weight: bold;color: rgb(153, 131, 198)">Toy store</h1>
+    <h3 style="font-weight: bold; color: rgb(153, 131, 198)">Toys for the whole family</h3>
+    <!-- when clicks open up the chat form -->
+    <button class="openChatBtn" onclick="openForm()">Chat</button>
+    <div class="openChat" style="display: none">
+      <div id="chatbox">
+        <p class="botText"><span>Hello! I am toybot</span></p>
+        <p class="botText"><span>How can i help you?</span></p>
+      </div>
+      <!-- user input and send button-->
+      <div id="userInput">
+        <input id="textInput" type="text" name="msg" placeholder="Message" />
+        <input id="buttonInput" class="btn" type="submit" value="Send" />
+      </div>
+      <!-- the close button to close the chat-->
+      <button type="button" class="btn close" onclick="closeForm()">
+        Close
+      </button>
+      <!-- js work -->
+      <script>
+        // query to select open chat button(chat form) and add and event click with function openForm onto it
+        document
+          .querySelector(".openChatBtn")
+          .addEventListener("click", openForm);
+        // query to select close chat button (chat form) and add and event click with function closeForm onto it 
+        document.querySelector(".close").addEventListener("click", closeForm);
+        function openForm() {
+          // if open then openchat display should be inline-block
+          document.querySelector(".openChat").style.display = "inline-block";
+          // if open then chat button should be hidden
+          document.querySelector(".openChatBtn").style.display = "none";
+        }
+        function closeForm() {
+          // if closed form then openchat display should be hidden
+          document.querySelector(".openChat").style.display = "none";
+          // if closed form then chat button should be displayed as block
+          document.querySelector(".openChatBtn").style.display = "block";
+        }
+        // function to get the chat bot response
+        function getChatBotResponse() {
+          // getting the value of text input
+          var rawText = $("#textInput").val();
+          // appending this userHtml to the chatbox 
+          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          // now appending the bot response into the chatbox so that it could be displayed
+          document
+            .getElementById("userInput")
+            .scrollIntoView({ block: "start", behavior: "smooth" });
+          $.get("/get", { msg: rawText }).done(function (data) {
+            var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+            $("#chatbox").append(botHtml);
+            document
+              .getElementById("userInput")
+              .scrollIntoView({ block: "start", behavior: "smooth" });
+          });
+        }
+        // function to send the message into the screen by clicking on send or pressing the enter key which gives the value 13
+        $("#textInput").keypress(function (e) {
+          if (
+            e.which == 13 &&
+            document.getElementById("textInput").value != ""
+          ) {
+            getChatBotResponse();
+          }
+        });
+        // function to click on send button and takes the input with it to the screen
+        $("#buttonInput").click(function () {
+          if (document.getElementById("textInput").value != "") {
+            getChatBotResponse();
+          }
+        });
+      </script>
+    </div>
+   
+      </script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+/* Body tag in which i have used background image of toys and font style */
+body {
+  font-family: Garamond;
+  background-image: url("https://th.bing.com/th/id/OIP.azUh_d8D6KBi_sJECRCgSgHaHa?pid=ImgDet&rs=1");
+}
+/*to lighten the image and make it somewhat transparent */
+img {
+  opacity: 0.5;
+}
+
+/* h1 tag which are used for headings of greater size margin botton and top 0 so that they can be between and text-align center so that they be in center */
+h1 {
+  color: white;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+  font-size: 40px;
+}
+/* h3 tag which are used for headings of smaller size margin top 3px so that they can be 3 px far from top */
+h3 {
+  color: white;
+  font-size: 20px;
+  margin-top: 3px;
+  text-align: center;
+}
+
+/* chatbot id is hit which is having static template when the chat is opened width is max */
+#chatbox {
+  width: 100%;
+}
+/* the send button and message input box argin top 3px so that they can be 5 px far from top*/
+#userInput {
+  width: 100%;
+  margin-top: 5%;
+}
+
+/* input box with border of 3px and  width max*/
+#textInput {
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid #009688;
+  font-family: monospace;
+  font-size: 13px;
+}
+/* send button with padding of 3px so that it's size increases from all sides by 3 */
+#buttonInput {
+  padding: 3px;
+  font-family: monospace;
+  font-size: 13px;
+}
+/* the message sent by user */
+.userText {
+  color: white;
+  font-family: monospace;
+  font-size: 13px;
+  text-align: right;
+  line-height: 30px;
+}
+/* span tag is use to mark up a text in this case userText's */
+.userText span {
+  background-color: #009688;
+  padding: 10px;
+  border-radius: 2px;
+}
+/* the response we get by the chatbot text-align left to take it to left*/
+.botText {
+  color: white;
+  font-family: monospace;
+  font-size: 13px;
+  text-align: left;
+  line-height: 30px;
+}
+/* span tag is use to mark up a text in this case botText's */
+.botText span {
+  background-color: #ef5350;
+  padding: 10px;
+  border-radius: 2px;
+}
+/* CHAT button which when clicked will open the chatbot form */
+/* position is fixed so that it doesnot move */
+.openChatBtn {
+  background-color: rgb(123, 28, 179);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+/* openChat div for all the chatbot body */
+/* overflow-y : auto for scrolling it upwards downwards */
+.openChat {
+  overflow-y: auto;
+  height: 300px;
+  text-align: justify;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  min-width: none;
+  max-width: 250px;
+  right: 15px;
+  border: 3px solid #ff08086b;
+  z-index: 9;
+  background-color: white;
+}
+/* openChat close button */
+.openChat .close {
+  background-color: red;
+  font-size: 12px;
+}
+/* openChat button hover effect : opacity : 1 so it can be transparent */
+.openChat .btn:hover,
+.openChatBtn:hover {
+  opacity: 1;
+}
+/* openChat button (send and close) */
+.openChat .btn {
+  padding: 7px 15px;
+  background-color: rgb(34, 197, 107);
+  color: white;
+  float: left;
+  font-weight: normal;
+  border: none;
+  cursor: pointer;
+  width: 47%;
+  margin: 2px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
